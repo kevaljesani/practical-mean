@@ -1,0 +1,18 @@
+<nav class="w-full flex justify-between items-center p-5 bg-indigo-500 shadow-lg">
+
+    <div class="logo">
+        <span class="text-gray-200 text-4xl flex justify-start items-center">Welcome!!</span>
+    </div>
+    <div class="nav-items">
+        <ng-container *ngIf="!isLoggedIn">
+        <span routerLink="/login" class="text-xl cursor-pointer text-gray-200 font-bold m-3  hover:underline hover:text-indigo-200">Login</span>
+       
+        <span routerLink="/register" class="text-xl cursor-pointer text-gray-200 font-bold m-3 hover:underline hover:text-indigo-200">Register</span>
+        </ng-container>
+        <ng-container *ngIf="isLoggedIn">
+           <span class="text-xl cursor-pointer text-gray-200 font-bold m-3 hover:underline hover:text-indigo-200">Card</span>
+           <span class="text-xl cursor-pointer text-gray-200 font-bold m-3 hover:underline hover:text-indigo-200">Welcome User</span>
+           <span routerLink="/login" (click)="logOut()" class="text-xl cursor-pointer text-gray-200 font-bold m-3 hover:underline hover:text-indigo-200">Logout</span>
+       </ng-container>
+    </div>
+</nav>
